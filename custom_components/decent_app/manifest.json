@@ -1,0 +1,13 @@
+{
+  "domain": "decent_app",
+  "name": "Decent.app",
+  "codeowners": [
+    "@ulope"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/ulope/hass-decent.app",
+  "integration_type": "hub",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/ulope/hass-decent.app/issues",
+  "version": "0.1.0"
+}
