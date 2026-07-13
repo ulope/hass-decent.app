@@ -1,5 +1,6 @@
 {
   "name": "Decent.app",
   "homeassistant": "2026.4.0",
-  "hacs": "2.0.5"
+  "hacs": "2.0.5",
+  "topics": ["decent espresso", "decent.app", "de1", "de1pro", "de1xl"]
 }
