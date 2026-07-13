@@ -1,0 +1,197 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "description": "Connect to the Decent.app (ReaPrime) gateway running on the tablet attached to your Decent Espresso machine.",
+        "data": {
+          "host": "Host",
+          "port": "Port"
+        },
+        "data_description": {
+          "host": "IP address or hostname of the tablet running Decent.app",
+          "port": "Port of the gateway API (default 8080)"
+        }
+      },
+      "reconfigure": {
+        "description": "Update the address of the Decent.app gateway.",
+        "data": {
+          "host": "Host",
+          "port": "Port"
+        },
+        "data_description": {
+          "host": "IP address or hostname of the tablet running Decent.app",
+          "port": "Port of the gateway API (default 8080)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to connect to the Decent.app gateway.",
+      "unknown": "Unknown error occurred."
+    },
+    "abort": {
+      "already_configured": "This gateway is already configured.",
+      "reconfigure_successful": "The gateway address was updated."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "machine_state": {
+        "name": "State",
+        "state": {
+          "booting": "Booting",
+          "busy": "Busy",
+          "idle": "Idle",
+          "sleeping": "Sleeping",
+          "heating": "Heating",
+          "preheating": "Preheating",
+          "espresso": "Espresso",
+          "hot_water": "Hot water",
+          "flush": "Flush",
+          "steam": "Steam",
+          "steam_rinse": "Steam rinse",
+          "skip_step": "Skipping step",
+          "cleaning": "Cleaning",
+          "descaling": "Descaling",
+          "calibration": "Calibration",
+          "self_test": "Self test",
+          "air_purge": "Air purge",
+          "transport_mode": "Transport mode",
+          "needs_water": "Needs water",
+          "error": "Error",
+          "fw_upgrade": "Firmware upgrade"
+        }
+      },
+      "machine_substate": {
+        "name": "Substate"
+      },
+      "pressure": {
+        "name": "Pressure"
+      },
+      "flow": {
+        "name": "Flow"
+      },
+      "group_temperature": {
+        "name": "Group temperature"
+      },
+      "mix_temperature": {
+        "name": "Mix temperature"
+      },
+      "steam_temperature": {
+        "name": "Steam temperature"
+      },
+      "target_pressure": {
+        "name": "Target pressure"
+      },
+      "target_flow": {
+        "name": "Target flow"
+      },
+      "target_group_temperature": {
+        "name": "Target group temperature"
+      },
+      "target_mix_temperature": {
+        "name": "Target mix temperature"
+      },
+      "water_level": {
+        "name": "Water level"
+      },
+      "profile_frame": {
+        "name": "Profile frame"
+      },
+      "scale_weight": {
+        "name": "Weight"
+      },
+      "scale_flow": {
+        "name": "Flow"
+      },
+      "scale_battery": {
+        "name": "Battery"
+      }
+    },
+    "binary_sensor": {
+      "machine_connected": {
+        "name": "Machine connected"
+      },
+      "scale_connected": {
+        "name": "Scale connected"
+      },
+      "water_level_low": {
+        "name": "Water level low"
+      }
+    },
+    "button": {
+      "start_espresso": {
+        "name": "Start espresso"
+      },
+      "start_steam": {
+        "name": "Start steam"
+      },
+      "start_hot_water": {
+        "name": "Start hot water"
+      },
+      "start_flush": {
+        "name": "Start flush"
+      },
+      "stop": {
+        "name": "Stop"
+      },
+      "sleep": {
+        "name": "Sleep"
+      },
+      "tare_scale": {
+        "name": "Tare"
+      }
+    },
+    "number": {
+      "target_shot_volume": {
+        "name": "Target shot volume"
+      },
+      "target_group_temp": {
+        "name": "Target brew temperature"
+      },
+      "target_steam_temp": {
+        "name": "Target steam temperature"
+      },
+      "target_steam_duration": {
+        "name": "Steam duration"
+      },
+      "target_hot_water_temp": {
+        "name": "Hot water temperature"
+      },
+      "target_hot_water_volume": {
+        "name": "Hot water volume"
+      },
+      "target_hot_water_duration": {
+        "name": "Hot water duration"
+      },
+      "water_refill_level": {
+        "name": "Water refill threshold"
+      }
+    },
+    "select": {
+      "brew_profile": {
+        "name": "Brew profile"
+      }
+    },
+    "switch": {
+      "power": {
+        "name": "Power"
+      }
+    }
+  },
+  "services": {
+    "set_machine_state": {
+      "name": "Set machine state",
+      "description": "Requests a state change on the Decent Espresso machine.",
+      "fields": {
+        "state": {
+          "name": "State",
+          "description": "The state to request (idle, sleeping, espresso, hotWater, steam or flush)."
+        },
+        "config_entry_id": {
+          "name": "Gateway",
+          "description": "The Decent.app gateway to target. Defaults to the first configured gateway."
+        }
+      }
+    }
+  }
+}
